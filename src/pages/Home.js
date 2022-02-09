@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,14 +6,14 @@ import {
   View,
   Platform,
   FlatList,
-} from "react-native";
-import { Button } from "../components/Button";
-import { SkillCard } from "../components/SkillCard";
+} from 'react-native';
+import { Button } from '../components/Button';
+import { SkillCard } from '../components/SkillCard';
 
 export function Home() {
-  const [newSkill, setNewSkill] = useState("");
+  const [newSkill, setNewSkill] = useState('');
   const [mySkills, setMySkills] = useState([]);
-  const [gretting, setGretting] = useState("");
+  const [gretting, setGretting] = useState('');
 
   function handleAddNewSKill() {
     setMySkills((oldState) => [...oldState, newSkill]);
@@ -23,11 +23,11 @@ export function Home() {
     const current = new Date().getHours();
 
     if (current < 12) {
-      setGretting("Goold morning");
+      setGretting('Goold morning');
     } else if (current >= 12 && current < 18) {
-      setGretting("Goold afteroon");
+      setGretting('Goold afteroon');
     } else {
-      setGretting("Goold night");
+      setGretting('Goold night');
     }
   }, []);
 
@@ -57,23 +57,23 @@ export function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#121015",
+    backgroundColor: '#121015',
     paddingHorizontal: 20,
     paddingVertical: 70,
   },
   grettings: {
-    color: "#FFF",
+    color: '#FFF',
   },
   title: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   input: {
-    backgroundColor: "#1F1E25",
-    color: "#fff",
+    backgroundColor: '#1F1E25',
+    color: '#fff',
     fontSize: 18,
-    padding: Platform.OS === "ios" ? 15 : 10,
+    padding: Platform.OS === 'ios' ? 15 : 10,
     marginTop: 30,
     borderRadius: 5,
   },
